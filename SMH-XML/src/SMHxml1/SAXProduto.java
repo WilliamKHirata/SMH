@@ -14,11 +14,13 @@ public class SAXProduto extends DefaultHandler {
     private int codigo = 0;
 
     public SAXProduto() {
+        System.out.println("Start document");
     }
 
     @Override
     public void startElement(String uri, String localName, String rawName,
             Attributes attributes) {
+        System.out.println("StartElement");
         if (localName.equals("produto")) {
             this.nprodutos++;
             this.produto = true;
@@ -32,6 +34,7 @@ public class SAXProduto extends DefaultHandler {
 
     @Override
     public void characters(char characters[], int start, int length) {
+        System.out.println("Characters");
         if (this.atualiza && this.produto) {
             this.codigo = Integer.parseInt(new String(characters, start, length));
             this.atualiza = this.produto = false;
@@ -40,6 +43,7 @@ public class SAXProduto extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String rawName) {
+        System.out.println("EndElement");
         if (localName.equals("produtos")) {
             printResult();
         }
