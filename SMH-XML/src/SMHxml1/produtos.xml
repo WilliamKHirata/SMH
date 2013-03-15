@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<produtos>
+	<produto preco="100">1000</produto>
+	<produto preco="150">1001</produto>
+	<produto preco="50">1002</produto>
+</produtos>
