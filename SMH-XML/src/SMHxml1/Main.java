@@ -15,6 +15,7 @@ public class Main {
             parser.setContentHandler(SAXHandler);
             parser.setErrorHandler(SAXHandler);
             parser.parse("c:\\temp\\produtos.xml");
+            System.out.println("Testando");
         } catch (Exception e) {
             e.printStackTrace(System.err);
         }
